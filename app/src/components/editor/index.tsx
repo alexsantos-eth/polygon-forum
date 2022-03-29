@@ -40,10 +40,12 @@ const CommentEditor: React.FunctionComponent<CommentEditorProps> = ({
     <div>
       <div
         style={{
-          display: "flex",
+          display: "grid",
           justifyContent: "space-between",
           alignItems: "center",
-          marginBottom: "10px",
+          gridTemplateColumns: "48px 1fr",
+          marginTop: "20px",
+          marginBottom: "20px",
         }}
       >
         <Avatar
@@ -52,7 +54,7 @@ const CommentEditor: React.FunctionComponent<CommentEditorProps> = ({
         />
         <Input.TextArea
           rows={4}
-          style={{ marginLeft: "20px" }}
+          style={{ marginLeft: "20px", background: "#192734", color: "#fff" }}
           value={message}
           onChange={handleMessage}
           placeholder="Write a message.."

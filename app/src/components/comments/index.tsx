@@ -22,6 +22,7 @@ const Comments: React.FunctionComponent<CommentsProps> = ({ topic }) => {
       style={{
         width: "100%",
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         padding: 20,
@@ -33,7 +34,14 @@ const Comments: React.FunctionComponent<CommentsProps> = ({ topic }) => {
           <span>Cargando...</span>
         </div>
       )}
-      <div style={{ minWidth: "300px", maxHeight: "500px", overflowY: "auto" }}>
+      <div
+        style={{
+          marginTop: "20px",
+          minWidth: "300px",
+          maxHeight: "500px",
+          overflowY: "auto",
+        }}
+      >
         {query.data?.map((comment: ForumComment) => (
           <Comment key={comment.id} comment={comment} />
         ))}

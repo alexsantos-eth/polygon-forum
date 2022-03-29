@@ -14,15 +14,25 @@ interface CommentProps {
 const Comment: React.FunctionComponent<CommentProps> = ({ comment }) => {
   return (
     <div>
-      <Card bordered={false} style={{ width: 300 }}>
+      <Card bordered={false} style={{ width: 300, background: "#22303C" }}>
         <Card.Meta
           avatar={<Avatar size={48} address={comment.creator_address} />}
-          title={truncateMiddle(comment.creator_address || "", 5, 4, "...")}
-          description={<TimeAgo date={comment.created_at.toNumber() * 1000} />}
+          title={
+            <p style={{ color: "#fff" }}>
+              {truncateMiddle(comment.creator_address || "", 5, 4, "...")}
+            </p>
+          }
+          description={
+            <TimeAgo
+              style={{ color: "#fff" }}
+              date={comment.created_at.toNumber() * 1000}
+            />
+          }
         />
         <br />
-        <p>{comment.message}</p>
+        <p style={{ color: "#fff" }}>{comment.message}</p>
       </Card>
+      <hr />
     </div>
   );
 };
